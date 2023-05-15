@@ -1,0 +1,42 @@
+﻿@model MVCStudent.Models.StudentModel
+@{
+    ViewData["Title"] = "GetStudentByID";
+}
+
+<h2>Obter estudante pelo Id <a asp-action="Index" class="btn btn-sm btn-success">Retornar</a></h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="ID">ID:</label>
+        <input class="form-control" name="ID" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Buscar</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Estudante</h2>
+
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>EMail</th>
+                <th>Ativos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ID</td>
+                <td>@Model.StudentName</td>
+                <td>@Model.CPF</td>
+                <td>@Model.Email</td>
+                <td>@Model.IsActive</td>
+            </tr>
+        </tbody>
+    </table>
+}

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem vindo ao cadastro de Alunos</h1>
+</div>
+<div class="txt-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>StudentName</td>
+                <td>CPF</td>
+                <td>Email</td>
+                <td>Date</td>
+                <td>IsActive</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.StudentName</td>
+                    <td>@item.CPF</td>
+                    <td>@item.Email</td>
+                    <td>@item.Date</td>
+                    <td>@item.IsActive</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
